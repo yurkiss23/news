@@ -15,18 +15,20 @@ import Header from './components/header';
 function App() {
   return (
     <Router>
-      
-      <Header/>
+      <div className="container">
+        <Header/>
 
-      <Switch>
-        <Route exact path="/">
-          <HomePage/>
-        </Route>
-        <Route exact path="/login">
-          <LoginPage/>
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <HomePage/>
+          </Route>
+          <Route exact path="/login">
+            <LoginPage/>
+          </Route>
 
-      </Switch>
+        </Switch>
+
+      </div>
     </Router>
   );
 }
