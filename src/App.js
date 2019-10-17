@@ -25,7 +25,6 @@ function App() {
           <Route exact path="/login">
             <LoginPage/>
           </Route>
-
         </Switch>
 
       </div>

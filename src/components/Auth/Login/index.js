@@ -18,6 +18,9 @@ class LoginPage extends Component {
         if(login==vasyl){
             errors.invalid='User is'
         }
+        if(login==null){
+            errors.invalid='Input login'
+        }
         this.setState({errors: errors});
     }
 
@@ -41,7 +44,7 @@ class LoginPage extends Component {
                     }
 
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
-                    <fieldset className="form-group">
+                    <fieldset className="form-group text-center">
                         <label htmlFor="login">Пошта/Телефон</label>
                         <input type="text"
                             className={classnames('form-control', { 'is-invalid': !!errors.login })}
@@ -51,9 +54,9 @@ class LoginPage extends Component {
                             onChange={this.onChange} />
                         <div className="invalid-feedback">
                             Please choose a username.
-                            </div>
+                        </div>
                     </fieldset>
-                    <fieldset className="form-group">
+                    <fieldset className="form-group text-center">
                         <label htmlFor="password">Пароль</label>
                         <input type="password"
                             className="form-control is-invalid"
@@ -61,7 +64,7 @@ class LoginPage extends Component {
                             name="password" />
                         <div className="invalid-feedback">
                             Please choose a password.
-                            </div>
+                        </div>
                     </fieldset>
                     <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                     <p className="mt-5 mb-3 text-muted">© 2017-2019</p>
