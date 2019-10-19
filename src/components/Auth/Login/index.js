@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
+import axios from 'axios';
 import './index.scss';
 
 class LoginPage extends Component {
@@ -13,15 +14,22 @@ class LoginPage extends Component {
     onSubmithandler=(e)=>{
         e.preventDefault();
         const {login}=this.state;
-        let vasyl="vasyl";
+        //let vasyl="vasyl";
         let errors={};
-        if(login==vasyl){
-            errors.invalid='User is'
-        }
-        if(login==null){
-            errors.invalid='Input login'
-        }
+        // if(login==vasyl){
+        //     errors.invalid='User is'
+        // }
+        // if(login==null){
+        //     errors.invalid='Input login'
+        // }
         this.setState({errors: errors});
+        const model = {"email":login};
+        axios.post("http://localhost:44373/api/Account/login", model).then(
+            (rest)=>{
+                console.log('--x--');
+                
+            }
+        );
     }
 
     onChange=(e)=>{
