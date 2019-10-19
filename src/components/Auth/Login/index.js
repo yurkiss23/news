@@ -24,7 +24,7 @@ class LoginPage extends Component {
         // }
         this.setState({errors: errors});
         const model = {"email":login};
-        axios.post("http://localhost:44373/api/Account/login", model).then(
+        axios.post("https://localhost:44373/api/Account/login", model).then(
             (rest)=>{
                 console.log('--x--');
                 
