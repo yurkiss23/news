@@ -1,0 +1,13 @@
+$form-signin-max-width: 400px;
+
+.signin{
+    .text-center {
+        text-align: center!important;
+    }
+    .form-signin {
+        width: 100%;
+        max-width: $form-signin-max-width;
+        padding: 15px;
+        margin: auto;
+    }
+}

@@ -29,6 +29,8 @@ class LoginPage extends Component {
             (rest)=>{
                 const tokenJwt =  rest.data;
                 console.log(tokenJwt);
+
+                this.onClick();
             }
         );
     }
@@ -36,14 +38,25 @@ class LoginPage extends Component {
     onChange=(e)=>{
         this.setState({[e.target.name]: e.target.value});
     }
+
+    confirmToken=(e)=>{
+        console.log("---confirm---");
+        axios.post("")
+    }
+
+    onClick=(e)=>{
+        console.log("---clickLogin---");
+        this.confirmToken();
+    }
+
     render() {
         const {errors, login, password} = this.state;
         //console.log('----login----', login);
         return (
-            <div className="signin">
-                <form onSubmit={this.onSubmithandler} className="form-signin">
+            <div className="login">
+                <form onSubmit={this.onSubmithandler} className="form-login">
                     <img className="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
-                    <h1 className="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+                    <h1 className="h3 mb-3 font-weight-normal text-center">Please login</h1>
                     
                     {
                         !!errors.invalid &&
@@ -77,8 +90,7 @@ class LoginPage extends Component {
                             Please choose a password.
                         </div>
                     </fieldset>
-                    <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    <p className="mt-5 mb-3 text-muted">© 2017-2019</p>
+                    <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                 </form>
             </div>
         );

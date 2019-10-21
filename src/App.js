@@ -10,7 +10,7 @@ import {
 
 import HomePage from './components/Home';
 import LoginPage from './components/Auth/Login';
-import LoginPage from './components/Auth/sig';
+import SigninPage from './components/Auth/Signin';
 import Header from './components/header';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <LoginPage/>
           </Route>
           <Route exact path="/signIn">
-            <LoginPage/>
+            <SigninPage/>
           </Route>
         </Switch>
 
