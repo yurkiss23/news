@@ -10,6 +10,7 @@ import {
 
 import HomePage from './components/Home';
 import LoginPage from './components/Auth/Login';
+import LoginPage from './components/Auth/sig';
 import Header from './components/header';
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
             <HomePage/>
           </Route>
           <Route exact path="/login">
+            <LoginPage/>
+          </Route>
+          <Route exact path="/signIn">
             <LoginPage/>
           </Route>
         </Switch>

@@ -6,6 +6,7 @@ import './index.scss';
 class LoginPage extends Component {
     state = {
         login: '',
+        password: '',
         errors: {
             //invalid: 'User is',
             //login: 'Not valid login'
@@ -23,11 +24,11 @@ class LoginPage extends Component {
         //     errors.invalid='Input login'
         // }
         this.setState({errors: errors});
-        const model = {"email":login};
+        const model = {"email":login, "password":"Qwerty1-"};
         axios.post("https://localhost:44373/api/Account/login", model).then(
             (rest)=>{
-                console.log('--x--');
-                
+                const tokenJwt =  rest.data;
+                console.log(tokenJwt);
             }
         );
     }
@@ -36,8 +37,8 @@ class LoginPage extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
     render() {
-        const {errors, login} = this.state;
-        console.log('----login----', login);
+        const {errors, login, password} = this.state;
+        //console.log('----login----', login);
         return (
             <div className="signin">
                 <form onSubmit={this.onSubmithandler} className="form-signin">
@@ -67,9 +68,11 @@ class LoginPage extends Component {
                     <fieldset className="form-group text-center">
                         <label htmlFor="password">Пароль</label>
                         <input type="password"
-                            className="form-control is-invalid"
+                            className={classnames('form-control', { 'is-invalid': !!errors.password })}
                             id="password"
-                            name="password" />
+                            name="password"
+                            value={password}
+                            onChange={this.onChange} />
                         <div className="invalid-feedback">
                             Please choose a password.
                         </div>
