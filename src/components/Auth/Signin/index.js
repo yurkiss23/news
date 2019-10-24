@@ -4,7 +4,17 @@ import axios from 'axios';
 import './index.scss';
 
 class SigninPage extends Component {
-    state = {  }
+    state = {
+        login: '',
+        password: ''
+    }
+
+    onSubmit=(e)=>{
+        e.preventDefault();
+        console.log("---signin---")
+        
+    }
+
     render() { 
         return (
             <div className="container signin">
@@ -16,7 +26,7 @@ class SigninPage extends Component {
                                 <h4 className="card-title mt-2">Sign up</h4>
                             </header>
                             <article className="card-body">
-                                <form className="form-signin">
+                                <form onSubmit={this.onSubmit} className="form-signin">
                                     <div className="form-group">
                                         <label>Пошта</label>
                                         <input type="email" className="form-control" placeholder=""></input>
