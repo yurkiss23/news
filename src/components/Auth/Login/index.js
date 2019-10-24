@@ -41,7 +41,7 @@ class LoginPage extends Component {
 
     confirmToken=(e)=>{
         console.log("---confirm---");
-        axios.post("")
+        //axios.post("")
     }
 
     onClick=(e)=>{
