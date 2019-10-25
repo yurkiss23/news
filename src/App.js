@@ -12,6 +12,7 @@ import HomePage from './components/Home';
 import LoginPage from './components/Auth/Login';
 import SigninPage from './components/Auth/Signin';
 import Header from './components/header';
+import UserCabinet from './components/Auth/Cabinet';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route exact path="/signIn">
             <SigninPage/>
+          </Route>
+          <Route exact path="/cabinet">
+            <UserCabinet/>
           </Route>
         </Switch>
 

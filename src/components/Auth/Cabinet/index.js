@@ -7,11 +7,10 @@ class UserCabinet extends Component {
         name: ''
     }
     render() {
-        const {name}=this.state;
         return (
             <div className="container">
                 <div className="inline">
-                    <h3>{name}</h3>
+                    <h3>{this.props.name}</h3>
                 </div>
             </div>
         );

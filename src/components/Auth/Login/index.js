@@ -36,18 +36,9 @@ class LoginPage extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
-    // confirmToken=(e)=>{
-    //     console.log("---confirm---");
-    //     //axios.post("")
-    // }
-
     onClick=(e)=>{
         console.log("---clickLogin---");
-        //this.confirmToken();
         this.setState({show:true});
-        // return(
-        //     <Cabinet/>
-        // );
     }
 
     render() {
